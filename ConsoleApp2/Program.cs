@@ -19,7 +19,7 @@ namespace StreamReaderDemo
                 int number;
                 int random_number = random.Next(1, 100);
                 Console.WriteLine("Добро пожаловать в игру 'Угадай число'!");
-                Console.WriteLine("Правила игры: компьютер загадывает число от 1 до 100, ваша задача его отдагадать. Вы также можете попросить подсказку и узнать меньше число или больше. Если хотите закончить игру напишите 'Выход'. Если хотите начать заново напишите 'Заново'.");
+                Console.WriteLine("Правила игры: компьютер загадывает число от 1 до 100, ваша задача его отдагадать. Если хотите закончить игру напишите 'Выход'. Если хотите начать заново напишите 'Заново'.");
                 Console.WriteLine("Желаете начать?(Да/Нет)");
                 string answer = Console.ReadLine();
                 if (answer == "Нет")
@@ -44,7 +44,10 @@ namespace StreamReaderDemo
                 {
                     Environment.Exit(0);
                 }
-
+                else if (choice=="Заново")
+                {
+                    Main();
+                }
                 else if (int.TryParse(choice, out number))
                 {
                     if (number == random_number)
